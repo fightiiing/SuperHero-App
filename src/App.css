@@ -1,38 +1,119 @@
 .App {
+  text-align: left;
+  margin: 10px;
+}
+
+audio {
+  display: block;
+  margin: auto;
+  border-radius: 40px;
+  border:#0386b9 solid 5px;
+  box-shadow: #0386b9 0 0px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 0px 0 inset;
+}
+
+.divider {
+  color: red;
+  font-size: 25px;
+}
+
+img {
+  border: 10px solid #757575;
+  border-radius: 15px;
+  animation-name: blinking;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+@keyframes blinking {
+  100% {
+    border-color: #0386b9;
+  }
+}
+
+#vs {
+  font-size: 150%;
+}
+
+.versus {
+  font-family: 'Bangers', cursive;
+  justify-content:space-evenly;
+  flex-direction: row;
+  display: flex;
+  font-size: 150%;
+  font-weight: lighter;
+  color: gold;
+  text-shadow: 2px 3px #000000 ;
+  letter-spacing: 9px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Bangers', cursive;
+  font-size: 250%;
+  font-weight: lighter;
+  text-shadow: 2px 2px #ffffff ;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr {
+  border-top: 5px solid gold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#input {
+  margin-top: 10px;
+  border-radius: 6px;
+  box-shadow: #0386b9 0 0px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 0px 0 inset;
+  justify-content: flex;
+  display: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.inputDiv {
+  text-align: center;  
+}
+
+#button-29 {
+  margin-top: 10px;  
+  margin-left: 5px;  
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    /* position: relative; */
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .button-29:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   }
-}
+  
+  .button-29:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-29:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
