@@ -1,6 +1,12 @@
 .App {
-  text-align: left;
   margin: 10px;
+}
+
+.headerTop {
+  background-image: url("images/guile_stage.gif");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center center;
 }
 
 audio {
@@ -8,12 +14,29 @@ audio {
   margin: auto;
   border-radius: 40px;
   border:#0386b9 solid 5px;
-  box-shadow: #0386b9 0 0px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 0px 0 inset;
+}
+
+.heroContainer {
+  display: flex;
+  }
+
+.hero1 {
+  width: 50%;
+  justify-content:space-evenly;
+}
+
+.hero2 {
+  width: 50%;
+  justify-content:space-evenly;
 }
 
 .divider {
-  color: red;
-  font-size: 25px;
+  font-family: 'Bangers', cursive;
+  font-size: 50px;
+  font-weight: lighter;
+  color: black;
+  text-shadow: 1px 2px gold ;
+  text-align: center;
 }
 
 img {
@@ -23,6 +46,7 @@ img {
   animation-duration: .5s;
   animation-iteration-count: infinite;
 }
+
 @keyframes blinking {
   100% {
     border-color: #0386b9;
@@ -30,52 +54,99 @@ img {
 }
 
 #vs {
-  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Bangers', cursive;
+  font-size: 550%;
+  color: red;
+  font-weight: lighter;
+  text-shadow: 1px 2px gold ;
+  text-align: center;
+  align-items: center;
 }
 
-.versus {
+.heroContainer {
   font-family: 'Bangers', cursive;
-  justify-content:space-evenly;
-  flex-direction: row;
-  display: flex;
   font-size: 150%;
   font-weight: lighter;
   color: gold;
-  text-shadow: 2px 3px #000000 ;
+  text-shadow: 2px 3px #000000;
+  text-align: center;
   letter-spacing: 9px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.heroStats {
+  flex-wrap: wrap; 
 }
 
 .header {
   display: flex;
   justify-content: center;
   font-family: 'Bangers', cursive;
-  font-size: 250%;
+  font-size: 400%;
   font-weight: lighter;
-  text-shadow: 2px 2px #ffffff ;
+  /* text-shadow: 1px 2px #0386b9 ; */
   text-align: center;
-}
-
-hr {
-  border-top: 5px solid gold;
+  background-image: linear-gradient(360deg, red, yellow);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #f3ec78;
+  -webkit-text-stroke: 1px black;
 }
 
 #input {
   margin-top: 10px;
   border-radius: 6px;
   box-shadow: #0386b9 0 0px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 0px 0 inset;
-  justify-content: flex;
-  display: center;
+  justify-content: right;
+  display: flex;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  color: white;
+  font-family: "JetBrains Mono",monospace;
+  height: 24px;
+  width: 133px;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
 }
 
-.inputDiv {
-  text-align: center;  
+::placeholder {
+  color: red;
+  line-height: 1;
+  font-family: "JetBrains Mono",monospace;
+  color: black;
+}
+
+.forms {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+/* 
+.inputDivContainer {
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.inputDivContainer2 {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+} */
+
+.buttonRight {
+  display: flex;
+  justify-content: right;
 }
 
 #button-29 {
   margin-top: 10px;  
-  margin-left: 5px;  
-  align-items: center;
-    appearance: none;
+  /* align-items: center; */
+    /* appearance: none; */
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
     border: 0;
     border-radius: 6px;
@@ -102,18 +173,4 @@ hr {
     white-space: nowrap;
     will-change: box-shadow,transform;
     font-size: 18px;
-  }
-  
-  .button-29:focus {
-    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  }
-  
-  .button-29:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-  }
-  
-  .button-29:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
   }

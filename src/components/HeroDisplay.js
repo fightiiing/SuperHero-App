@@ -6,20 +6,19 @@ export default function  HeroDisplay ({ hero }){
     
     const loaded = () => {
       return (
-        <div>
-        <hr />
-        <div className="versus">
-        <h1>{hero.results[0].name}</h1>
-        <span id ="vs">VS.</span>
-        <h1>Superhero 2</h1>
-        </div>
-                    
-          <h3>Intelligence = {hero.results[0].powerstats.intelligence} <span className="divider">|</span> Strength = {hero.results[0].powerstats.strength} <span className="divider">|</span> Speed = {hero.results[0].powerstats.speed} <span className="divider">|</span> Durability = {hero.results[0].powerstats.durability}</h3>
-          <h3>Height = {hero.results[0].appearance.height[0]} <span className="divider">|</span> Weight = {hero.results[0].appearance.weight[0]}<span className="divider"> | </span> Combat = {hero.results[0].powerstats.combat}</h3>
-                    
-          <img src={hero.results[0].image.url} alt={hero.results[0].name} />   
+        <div className="heroContainer">
+          <div className="heroStats">
+            <h1>{hero.results[0].name}</h1>
             
-        </div>
+            <h3>Intelligence = {hero.results[0].powerstats.intelligence} <span className="divider">|</span> Strength = {hero.results[0].powerstats.strength} </h3>
+            <h3>Speed = {hero.results[0].powerstats.speed} <span className="divider">|</span> Durability = {hero.results[0].powerstats.durability}</h3>
+            <h3>Height = {hero.results[0].appearance.height[0]} <span className="divider">|</span> Weight = {hero.results[0].appearance.weight[0]}</h3>
+
+            <img src={hero.results[0].image.url} alt={hero.results[0].name} />   
+          </div>   
+          
+        </div>            
+        
       );
     };
   
