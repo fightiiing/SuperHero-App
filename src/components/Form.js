@@ -1,6 +1,5 @@
 import {useState} from "react";
 
-// Define a function that is our component, always make sure to declare the props parameter so you can use props in your component
 export default function Form (props) {
   //State to hold the data of our form
   const [formData, setFormData] = useState({
@@ -16,18 +15,17 @@ export default function Form (props) {
   const handleSubmit = (event) => {
     //prevent page from refreshing on form submission
     event.preventDefault();
-    //pass the search term to moviesearch prop, which is apps getMovie function
+    //pass the search term to herosearch prop, which is apps getHero function
     props.herosearch(formData.searchterm);
   };
 
-  //The component must return some JSX
   return (
     <div className="inputDivContainer">
       <div className="inputDivAndButton">
         <form onSubmit={handleSubmit}>
         <input
           id="input"
-          placeholder="SuperHero 1"
+          placeholder="Type in a SuperHero"
           type="text"
           name="searchterm"
           onChange={handleChange}
