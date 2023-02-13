@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 export default function Fight({ hero, hero2 }) {
     
@@ -69,8 +71,6 @@ export default function Fight({ hero, hero2 }) {
         setNameFighter1(hero.results[0].name);
         setNameFighter2(hero2.results[0].name);
 
-        //console.log("fighter1 accuracy-"+ fighter1.accuracy + " fighter 1 attack-" + fighter1.attack + " fighter2 accuracy-"+fighter2.accuracy + " fighter 2 attack-" + fighter2.attack)
-
         while (defense1 > 0 && defense2 > 0) {
                 if (randomNum(0,100)>=50){
                     fighter1.attackFunc(fighter2);
@@ -103,11 +103,9 @@ export default function Fight({ hero, hero2 }) {
                             break;
                         }
                 };
-
-            
-            break;    //the bracket below closes the while loop   
-                };
-        
+            //the bracket below closes the while loop   
+            break;    
+                };    
         };
     
         return (
@@ -121,9 +119,10 @@ export default function Fight({ hero, hero2 }) {
                 </div>
             
                 <div className="fightDiv">    
-                <button onClick={handleClick} className="fightButton">
+                <Tippy content="Keep pressing FIGHT until there's a winner!"><button onClick={handleClick} className="fightButton">
                     Fight!
                 </button>
+                </Tippy>
                 <span className="text" >{gameText}</span>
                     </div>
                                  

@@ -1,4 +1,6 @@
 import {useState} from "react";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 export default function Form (props) {
   //State to hold the data of our form
@@ -23,6 +25,7 @@ export default function Form (props) {
     <div className="inputDivContainer">
       
         <form onSubmit={handleSubmit}>
+        <Tippy content="Type in a superhero name">
         <input
           id="input"
           placeholder="SuperHero 1"
@@ -32,6 +35,7 @@ export default function Form (props) {
           value={formData.searchterm}
           autoFocus
         />   
+        </Tippy>
         <input type="Submit" button id="submit"/>
       </form>
         

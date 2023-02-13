@@ -8,6 +8,8 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import song from "./audio/streetFighter2Theme.mp3";
 import Fight from './components/Fight';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 export default function App() {
   //set state to make custom message for an undefined/not found fetch return from api
@@ -104,12 +106,15 @@ export default function App() {
             
         <div className='footer'>
             <Fight hero={hero} hero2={hero2} />
+       <Tippy content="Press play for stage music!">
+
           <div className="audioPlayer">
             <AudioPlayer
             src={song}
             showFilledVolume={true}
              />
             </div>
+            </Tippy>
         </div>
       </div>
     );
