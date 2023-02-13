@@ -1,70 +1,12 @@
-# Getting Started with Create React App
+[Netlify Live Link]: 
+https://genuine-tartufo-997b8e.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Approach:
+Find an api that would provide superhero fight statistics (Marvel had good general data, but not the type of data I wanted), I knew there had to be one out there on the internet somewhere, then use those stats and combine it with the "Save the Universe" project earlier in the cohort, so that 2 superheroes fight eachother rather than the earth spaceship versus some number of alien spaceships. Good amount of adjustments needed but also many of the core code was brought over. Once I had the data I wanted, I had to figure out how to display it, for that I based it off of the 'Movie' database lab. Then to get the data into the "fight" code I passed the data as a prop. 
 
-## Available Scripts
+Technologies used: 
+HTML, CSS, JS, REACT, AJAX. 
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Unsolved Problems (2):
+1. The "Superhero API" returns all matches for a search, sometimes there are multiple matches. For example if you search "Superman" what you get back in the data is "Cyborg Superman" and "Superman". "Cyborg" is returned first, or is in [0] position. This also applies to other well-known superheroes like Batman, Flash, Thor, and Thing. The way I have the display component setup, is that it always takes the data from the first position. A work-around could be to put a conditional, looking at the data, and putting special cases for Superman, etc. Another work-around could be to search by character number that they provide, but then a person would need to look at a chart (go to another page) and get the superhero number, but that's too much work. What I tried as a workaround was to make a hyperlink on the page under a side header "Popular picks" that would automatically bring up the superhero clicked on. This had to use a different url, and the json data that came back was formatted differently too, so the way the data was picked from it had to be changed as well. I did that, and my test version of clicking the "Superman" link was working. The problem however, was whenever the page refreshed, it would be a blank page. I think this is something I can get to work though with more time. 
+2. I used setState to update the state that reflects simple text from the game. As I found out, state doesn't always update immediately when using setState, but seems to about 90% of the time. So there are times when you press the 'Fight' button, but seemingly nothing happens. I think that's because either-the same random event occurred, which is definitely possible, or more likely, the state that is being read/displayed is the previous/or not updated state. I tried a few different ways to try to force update it, including using useEffect again, but it hasn't worked so far. I know both of these issues are fixable, I just haven't figured it out myself yet. 
