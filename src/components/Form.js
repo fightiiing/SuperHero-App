@@ -21,7 +21,7 @@ export default function Form (props) {
 
   return (
     <div className="inputDivContainer">
-      <div className="inputDivAndButton">
+      
         <form onSubmit={handleSubmit}>
         <input
           id="input"
@@ -34,7 +34,8 @@ export default function Form (props) {
         />   
         <input type="Submit" button id="button-29"/>
       </form>
-      </div>
+        
+      
     </div>
   );
 };

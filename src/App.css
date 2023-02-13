@@ -5,15 +5,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-* {
+ * {
   box-sizing: border-box;
-}
+} 
 
 body {
-  height: 150vh;
+  height: 100vh;
+  width: 100vw;
   background-color: var(--base-color);
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 .App {
@@ -22,19 +21,18 @@ body {
   grid-template-rows: .25fr .1fr 1fr .25fr;
   grid-template-areas:
     "header header"
-    "form1 form2"
+    "form1  form2"
     "hero1 hero2"
     "footer footer";
-  height: 145vh;
   gap: 0.5rem;
   }
 
-  .App > div {
+  .App > div {  
     background-image: url('images/comic.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-blend-mode: lighten;
-    background-color: rgb(36, 83, 170);
+    background-blend-mode: darken;
+    background-color: #9b906b;
   }
 
   /* .App > div:hover {
@@ -65,28 +63,33 @@ justify-content: center;
 .form1 {
   grid-area: form1;
   border: 2px solid white;
-  /* background-position-y: 45.5%;
-  background-repeat: repeat; */
-  /* background-image: url('images/mosaic.jpg'); */
-  /* background-blend-mode: darken;
-  background-color: rosybrown; */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
 }
 
+.randomButton {
+  background-color: #5468ff;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1.5rem;
+  justify-content: center;
+  padding: 1.2em 2.6em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 9px;
+  border: solid black 3px;
+  color: #000000;
+  box-shadow: 10px 5px 5px #ffffff;
+}
+
 .form2 {
   grid-area: form2;
   border: 2px solid white;
-  color: black;
-  /* background-color: var(--layover-color);
-  background-size: cover; */
-  /* background-repeat: no-repeat;
-  background-position-y: 32%; */
-  /* background-image: url('images/mosaic.jpg'); */
-  /* background-blend-mode: darken;
-  background-color: rosybrown; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,16 +97,13 @@ justify-content: center;
   }
 
   #input {
-    margin-top: 10px;
     border-radius: .6em;
     box-shadow: 10px 5px 5px rgb(255, 255, 255);
-    justify-content: right;
-    display: flex;
-    background-image: radial-gradient(100% 100% at 100% 100%, #5adaff 0, #5468ff 100%);
+    background-color: #5468ff;
     color: white;
     font-family: "JetBrains Mono", monospace;
     height: 35px;
-    width: 250px;
+    width: 253px;
     border: solid black 3px;
   }
 
@@ -122,6 +122,7 @@ justify-content: center;
   align-items: center;
   font-size: 2rem;
   text-align: center;
+  letter-spacing: 5px;
   font-family: 'Bangers', cursive;
   -webkit-text-stroke-width: .01rem;
   -webkit-text-stroke-color: white;
@@ -135,6 +136,7 @@ justify-content: center;
 
 .hero2 {
   grid-area: hero2;
+  letter-spacing: 5px;
   font-family: 'Bangers', cursive;
   border-radius: 6px;
   border: 2px solid white;
@@ -158,12 +160,9 @@ img {
   background-color: #5468ff;
   border-radius: 0.6em;
   cursor: pointer;
-  display: flex;
-  align-self: center;
   font-size: 1.5rem;
-  margin-top: 15px;
-  margin-bottom: 10px;
   padding: 1.2em 2.8em;
+  margin: 10px 30px;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
@@ -183,8 +182,78 @@ img {
   grid-area: footer;
   border-radius: 6px;
   border: 2px solid white;
-  font-size: larger;
+  display: grid;
+  grid-template-columns: 1fr;
+
 }
+
+ .health1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 18, 18);
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 9px;
+    -webkit-text-stroke: 1px black;
+    }
+
+  .health2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 18, 18);
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 9px;
+  -webkit-text-stroke: 1px black;
+  } 
+
+.fightDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fightButton {
+  background-color: #5468ff;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 1.2em 2.8em;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 9px;
+  border: solid black 3px;
+  color: black;
+  box-shadow: 10px 5px 5px #ffffff;
+}
+
+.audioPlayer {
+  margin: auto;
+  max-width: 250px;
+  padding-bottom: 10px;
+}
+
+.text {
+  color: rgb(255, 18, 18);
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 9px;
+  text-align: center;
+  -webkit-text-stroke: 1px black;
+}
+
 
 @media only screen and (max-width: 768px) {
   .App {
@@ -198,11 +267,49 @@ img {
       "form2"
       "hero2"
       "footer";
-      min-width: 150%;
     }
     #headerText{
       letter-spacing: 1px;
       padding: 10px;
     }
-  
+
+    .health1, .health2 {
+      padding: 10px;
+      text-align: center;
+    }
+    .form1 {
+      grid-area: form1;
+      border: 2px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+    }
+
+    .form2 {
+      grid-area: form2;
+      border: 2px solid white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+    }
+
+    #button-29 {
+      margin:0;
+    }
+
+    #input {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    .randomButton {
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
 }
