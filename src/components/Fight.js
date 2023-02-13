@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Fight({ hero, hero2 }) {
     
@@ -28,13 +28,13 @@ export default function Fight({ hero, hero2 }) {
             attackFunc(otherFighter){
                 if (randomNum(1,100) < fighter1.accuracy){
                     setGameText((`${fighter1.name} attacks!`));
-               
+                
                     setDef2(defense2 -= fighter1.attack);
                     setGameText((`${fighter1.name} lands a good strike! ${otherFighter.name}'s health now at ${Math.round(defense2)}`));
-               
+                   
                 } else {
                     setGameText((`A swing and a miss by ${fighter1.name}!`));
-                
+     
                 }        
              }
         }
@@ -50,12 +50,13 @@ export default function Fight({ hero, hero2 }) {
             attackFunc(otherFighter){
                 if (randomNum(0,100) < fighter2.accuracy){
                     setGameText((`${fighter2.name} attacks!`));
+                 
                     setDef1(defense1 -= fighter2.attack);
                     setGameText((`${fighter2.name} lands a good hit! ${otherFighter.name}'s health now at ${Math.round(defense1)}`));
-                                    
+         
                 } else {
                     setGameText((`${otherFighter.name} dodged the attack!`));
-               
+      
                 }        
              }
         }

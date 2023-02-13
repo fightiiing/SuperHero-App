@@ -25,14 +25,14 @@ export default function Form (props) {
         <form onSubmit={handleSubmit}>
         <input
           id="input"
-          placeholder="Type in a SuperHero"
+          placeholder="SuperHero 1"
           type="text"
           name="searchterm"
           onChange={handleChange}
           value={formData.searchterm}
           autoFocus
         />   
-        <input type="Submit" button id="button-29"/>
+        <input type="Submit" button id="submit"/>
       </form>
         
       

@@ -30,7 +30,7 @@ export default function Form2 (props) {
           onChange={handleChange}
           value={formData2.searchterm2}
         />   
-        <input type="submit" button id="button-29"/>
+        <input type="submit" button id="submit"/>
         
       </form>
       
