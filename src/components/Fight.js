@@ -11,6 +11,10 @@ export default function Fight({ hero, hero2 }) {
     const [nameFighter1, setNameFighter1] = useState("");
     const [nameFighter2, setNameFighter2] = useState("");
 
+    // const textUpdater = () => {
+    //     setGameText();
+    // }
+
     const randomNum = (min, max) => {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -30,13 +34,10 @@ export default function Fight({ hero, hero2 }) {
             attackFunc(otherFighter){
                 if (randomNum(1,100) < fighter1.accuracy){
                     setGameText((`${fighter1.name} attacks!`));
-                
                     setDef2(defense2 -= fighter1.attack);
-                    setGameText((`${fighter1.name} lands a good strike! ${otherFighter.name}'s health now at ${Math.round(defense2)}`));
-                   
-                } else {
+                    setGameText((`${fighter1.name} lands a good strike on ${otherFighter.name}!`));
+                 } else {
                     setGameText((`A swing and a miss by ${fighter1.name}!`));
-     
                 }        
              }
         }
@@ -52,13 +53,10 @@ export default function Fight({ hero, hero2 }) {
             attackFunc(otherFighter){
                 if (randomNum(0,100) < fighter2.accuracy){
                     setGameText((`${fighter2.name} attacks!`));
-                 
                     setDef1(defense1 -= fighter2.attack);
-                    setGameText((`${fighter2.name} lands a good hit! ${otherFighter.name}'s health now at ${Math.round(defense1)}`));
-         
+                    setGameText((`${fighter2.name} lands a good hit!`));
                 } else {
                     setGameText((`${otherFighter.name} dodged the attack!`));
-      
                 }        
              }
         }
@@ -67,7 +65,7 @@ export default function Fight({ hero, hero2 }) {
       
         fighter2.attack = ((fighter2.strength + fighter2.speed + fighter2.power) /(4+(fighter1.durability+fighter1.intelligence)/100));            
         fighter2.accuracy = ((fighter2.combat + fighter2.intelligence) / 2);
-        
+               
         setNameFighter1(hero.results[0].name);
         setNameFighter2(hero2.results[0].name);
 
@@ -79,8 +77,9 @@ export default function Fight({ hero, hero2 }) {
                 }
                 if (defense2 <= 0 && defense1 > 0){
                     setGameText((`${fighter1.name} wins the fight over ${fighter2.name}!`))
+                
                     let response = prompt(`${fighter1.name} won! Play again?`, "yes")
-                        if(response==="yes"){
+                 if(response==="yes"){
                             setDef1(100);
                             setDef2(100);
                             
@@ -92,8 +91,9 @@ export default function Fight({ hero, hero2 }) {
                 }; 
                 if (defense1 <= 0 && defense2 > 0){
                     setGameText((`${fighter2.name} wins the fight over ${fighter1.name}!`))
+                    
                     let response2 = prompt(`${fighter2.name} won! Play again?`, "yes")
-                        if(response2==="yes"){
+                if(response2==="yes"){
                             setDef1(100);
                             setDef2(100);
                             break;

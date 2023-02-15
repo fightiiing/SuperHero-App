@@ -74,10 +74,8 @@ body {
   border-radius: 0.6em;
   cursor: pointer;
   display: flex;
-  align-self: center;
   font-size: 1.8rem;
-  justify-content: center;
-  padding: 1.1em 1.3em;
+  padding: 1.1em 1.2em;
   letter-spacing: 20px;
   text-align: center;
   text-transform: uppercase;
@@ -96,6 +94,7 @@ body {
   cursor: pointer;
   font-size: 1.8rem;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
   border: solid black 3px;
@@ -281,11 +280,11 @@ img {
     letter-spacing: 2px;
     padding: 10px;
   }
-
-  .health1, .health2 {
+  
+.health1, .health2 {
     padding: 10px;
     text-align: center;
-  }
+}
   
   .form1, .form2 {
     flex-direction: column;
