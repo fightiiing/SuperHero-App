@@ -24,7 +24,15 @@ export default function Fight({ hero, hero2 }) {
      function handleClick() {
           
         let fighter1 = {
-            name:(hero.results[0].name),
+            nameFunc() {
+            if(hero.results[0].id==="195" || hero.results[0].id==="405" || hero.results[0].id==="69"){
+                return hero.results[1].name;
+            } else if (hero.results[0].id==="428"){
+                return hero.results[3].name;
+            } else {
+                return hero.results[0].name;
+            }
+            }, 
             durability:Number((hero.results[0].powerstats.durability)),
             combat:Number((hero.results[0].powerstats.combat)),
             intelligence:Number((hero.results[0].powerstats.intelligence)),
@@ -43,7 +51,15 @@ export default function Fight({ hero, hero2 }) {
         }
     
         let fighter2 = {
-            name:(hero2.results[0].name),
+            nameFunc() {
+            if(hero2.results[0].id==="195" || hero2.results[0].id==="405" || hero2.results[0].id==="69"){
+                return hero2.results[1].name;
+            } else if (hero2.results[0].id==="428"){
+                return hero2.results[3].name;
+            } else {
+               return hero2.results[0].name;
+            }
+            },
             durability:Number((hero2.results[0].powerstats.durability)),
             combat:Number((hero2.results[0].powerstats.combat)),
             intelligence:Number((hero2.results[0].powerstats.intelligence)),
@@ -66,8 +82,8 @@ export default function Fight({ hero, hero2 }) {
         fighter2.attack = ((fighter2.strength + fighter2.speed + fighter2.power) /(4+(fighter1.durability+fighter1.intelligence)/100));            
         fighter2.accuracy = ((fighter2.combat + fighter2.intelligence) / 2);
                
-        setNameFighter1(hero.results[0].name);
-        setNameFighter2(hero2.results[0].name);
+        setNameFighter1(fighter1.name=fighter1.nameFunc());
+        setNameFighter2(fighter2.name=fighter2.nameFunc());
 
         while (defense1 > 0 && defense2 > 0) {
                 if (randomNum(0,100)>=50){
@@ -123,7 +139,7 @@ export default function Fight({ hero, hero2 }) {
                     Fight!
                 </button>
                 </Tippy>
-                <span className="text" >{gameText}</span>
+                <span className="text">{gameText}</span>
                     </div>
                                  
           </div>            
