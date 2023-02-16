@@ -98,7 +98,7 @@ export default function Fight({ hero, hero2 }) {
                  if(response==="yes"){
                             setDef1(100);
                             setDef2(100);
-                            
+                            break;
                         } else{
                             setDef1(100);
                             setDef2(100);
@@ -128,10 +128,10 @@ export default function Fight({ hero, hero2 }) {
           <div>
             
             <div className="health1">
-                {nameFighter1} Health {Math.round(defense1)}
+                {nameFighter1} Health {Math.ceil(defense1)}
                 </div>
                 <div className="health2">
-                {nameFighter2} Health {Math.round(defense2)}
+                {nameFighter2} Health {Math.ceil(defense2)}
                 </div>
             
                 <div className="fightDiv">    
