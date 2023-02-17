@@ -9,5 +9,5 @@ Additiional things I'd like to tweak-- (2):
 
 2. There are times when you press the 'Fight' button, but seemingly nothing happens. I think that's because the same random event occurred. I added an animation on the button because I thought it looked better but also it better demonstrates that you've clicked it, showing that the game is still going. I'd like to tweak it with either more potential outcomes when the button is clicked or show more animation with the health/create a health bar. 
 
-[Netlify Live Link]: 
+Netlify Live Link 
 https://genuine-tartufo-997b8e.netlify.app/
