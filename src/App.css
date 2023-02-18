@@ -102,6 +102,7 @@ body {
   box-shadow: 3px 3px 3px #ffffff;
   letter-spacing: 20px;
   padding: 1.1em 1.4em;
+  font-weight:100;
 }
 
 #input {
@@ -130,7 +131,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 3.0rem;
   text-align: center;
   font-family: 'Bangers', cursive;
   -webkit-text-stroke-width: .01rem;
@@ -147,8 +148,7 @@ background-clip: text;
 }
 
 .divider {
-  font-family: 'Bangers', cursive;
-  font-size: 2.3rem;
+   font-size: 3.3rem;
   -webkit-text-stroke-color: black;
 }
 
@@ -294,15 +294,36 @@ img {
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
+    box-shadow: 3px 3px 3px #ffffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
   .randomButton {
     margin-bottom: 10px;
     margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
   #submit {
-    display:flex;
+    /* display:-webkit-flex; */
+    display: inline-block;
+    border: 1px solid black;
+    margin: 0;
+    text-decoration: none;
+    background: #1f5768ff;
+    color: #ffffff;
+    line-height: 1;
+    border: solid black 3px;
+    box-shadow: 3px 3px 3px #ffffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-weight:100;
+  }
+  
+  .divider {
+    display:none;
   }
 
   .hero1, .hero2 {
@@ -315,14 +336,14 @@ img {
 
   .hero1 h3, .hero2 h3{
     background-image: linear-gradient(0deg, rgb(255, 18, 18) 30%,rgb(255, 215, 38));
-    -webkit-text-stroke: transparent;  
+    -webkit-text-stroke: transparent; 
+    font-weight:100;
   }
 
   .hero1 h1, .hero2 h1{
     background-image: linear-gradient(0deg, rgb(255, 18, 18) 30%,rgb(255, 215, 38));
-    background-size: 100%;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: .05rem black;  
+     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .2rem black;  
+    font-weight:100;
   }
 }
