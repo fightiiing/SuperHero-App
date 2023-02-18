@@ -113,7 +113,7 @@ body {
   border: solid black 3px;
   line-height: 2rem;  
   font-size: 20px;
-  width: 267px;
+  width: 277px;
   margin-right: 10px;
   margin-bottom: 10px;
 }
@@ -180,7 +180,7 @@ img {
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
   letter-spacing: 9px;
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: .05rem black;
 }
 
 .fightDiv {
@@ -301,6 +301,10 @@ img {
     margin-top: 10px;
   }
 
+  #submit {
+    display:flex;
+  }
+
   .hero1, .hero2 {
     padding: 5px;
   }
@@ -311,6 +315,7 @@ img {
 
   .hero1 h3, .hero2 h3{
     background-image: linear-gradient(0deg, rgb(255, 18, 18) 30%,rgb(255, 215, 38));
+    -webkit-text-stroke: transparent;  
   }
 
   .hero1 h1, .hero2 h1{
@@ -318,6 +323,6 @@ img {
     background-size: 100%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: .05rem black;  
   }
 }
