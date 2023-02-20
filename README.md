@@ -1,5 +1,5 @@
 Netlify Live Link--> 
-https://genuine-tartufo-997b8e.netlify.app/
+https://superhero-fight.netlify.app/
 
 Approach:
 Find an api that would provide superhero fight statistics (Marvel had good general data, but not the type of data I wanted), I knew there had to be one out there on the internet somewhere, then use those stats and combine it with the "Save the Universe" project earlier in the cohort, so that 2 superheroes fight eachother rather than the earth spaceship versus some number of alien spaceships. Good amount of adjustments needed but also many of the core code was brought over. Once I had the data I wanted, I had to figure out how to display it, for that I based it off of the 'Movie' database lab. Then to get the data into the "fight" code I passed the data as a prop. 
