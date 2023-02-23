@@ -59,22 +59,22 @@ const thing = () => {
     };
    
     if (hero){
-      if (hero.results[0].id==="195"){
+      if (hero.results[0].id==="195" && hero.results[1]){
         //superman  
         return realSuperhero();
       } else if (hero.results[0].id==="69"){
         //batman
         return realSuperhero();
-      } else if (hero.results[0].id==="405"){
+      } else if (hero.results[0].id==="405" && hero.results[1]){
         //thor
         return realSuperhero();
-      } else if (hero.results[0].id==="428"){
+      } else if (hero.results[0].id==="428" && hero.results[3]){
         //thing
         return thing();
       } else {
-          return loaded();
+        return loaded();
       }   
       } else { 
-          return loading();
+        return loading();
       }
   };

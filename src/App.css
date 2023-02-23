@@ -176,12 +176,12 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: orangered;
+  color: black;
   font-size: 4.5rem;
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
   letter-spacing: 9px;
-  -webkit-text-stroke: .05rem black;
+  -webkit-text-stroke: .05rem rgb(255, 255, 255);
 }
 
 .fightDiv {
@@ -214,8 +214,8 @@ img {
 
 .fightButton:hover {
   transition-duration: 0.1s;
-  background-color: orangered;
-  color: #000000;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 
 .fightButton:after {
@@ -253,13 +253,13 @@ img {
 }
 
 .text {
-  color: orangered;
+  color:black;
   font-size: 4.5rem;
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
   letter-spacing: 9px;
   text-align: center;
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 0.05rem rgb(255, 255, 255);
 }
 
 @media only screen and (max-width: 897px) {

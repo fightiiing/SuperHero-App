@@ -11,10 +11,6 @@ export default function Fight({ hero, hero2 }) {
     const [nameFighter1, setNameFighter1] = useState("");
     const [nameFighter2, setNameFighter2] = useState("");
 
-    // const textUpdater = () => {
-    //     setGameText();
-    // }
-
     const randomNum = (min, max) => {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -86,7 +82,7 @@ export default function Fight({ hero, hero2 }) {
         setNameFighter2(fighter2.name=fighter2.nameFunc());
 
         while (defense1 > 0 && defense2 > 0) {
-                if (randomNum(0,100)>=50){
+                if (randomNum(0,100)>50){
                     fighter1.attackFunc(fighter2);
                 } else {
                     fighter2.attackFunc(fighter1);
