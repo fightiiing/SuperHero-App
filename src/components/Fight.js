@@ -21,9 +21,9 @@ export default function Fight({ hero, hero2 }) {
           
         let fighter1 = {
             nameFunc() {
-            if(hero.results[0].id==="195" || hero.results[0].id==="405" || hero.results[0].id==="69"){
+            if((hero.results[0].id==="195" && hero.results[1]) || (hero.results[0].id==="405" && hero.results[1])){
                 return hero.results[1].name;
-            } else if (hero.results[0].id==="428"){
+            } else if (hero.results[0].id==="428" && hero.results[3]){
                 return hero.results[3].name;
             } else {
                 return hero.results[0].name;
@@ -48,9 +48,9 @@ export default function Fight({ hero, hero2 }) {
     
         let fighter2 = {
             nameFunc() {
-            if(hero2.results[0].id==="195" || hero2.results[0].id==="405" || hero2.results[0].id==="69"){
+            if((hero2.results[0].id==="195" && hero.results[1]) || (hero2.results[0].id==="405" && hero.results[1])){
                 return hero2.results[1].name;
-            } else if (hero2.results[0].id==="428"){
+            } else if (hero2.results[0].id==="428" && hero.results[3]){
                 return hero2.results[3].name;
             } else {
                return hero2.results[0].name;
