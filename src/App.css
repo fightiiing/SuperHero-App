@@ -176,7 +176,7 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: #514689;
   font-size: 4.5rem;
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
@@ -191,7 +191,7 @@ img {
 }
 
 .fightButton {
-  background-color: #1f5768ff;
+  background-color: #a7a4e0;
   border-radius: 0.6em;
   cursor: pointer;
   display: flex;
@@ -214,8 +214,7 @@ img {
 
 .fightButton:hover {
   transition-duration: 0.1s;
-  background-color: rgb(0, 0, 0);
-  color: #ffffff;
+  color: #000000;
 }
 
 .fightButton:after {
@@ -253,7 +252,7 @@ img {
 }
 
 .text {
-  color:black;
+  color:#514689;
   font-size: 4.5rem;
   text-transform: uppercase;
   font-family: 'Bangers', cursive;
