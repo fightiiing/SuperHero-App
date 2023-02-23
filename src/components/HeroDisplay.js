@@ -55,12 +55,7 @@ const thing = () => {
 
 //conditional which chooses which function to run, which determines where the data is to be pulled from, depending on the superhero data. 'hero' is the json data passed in.   
     if (hero){
-<<<<<<< HEAD
       if (hero.results[0].id==="195" && hero.results[1]){
-=======
-//checking the id key from 'hero', if it matches the string value, then run the corresponding function. If not, return the default display loaded() function. If no data in 'hero', return loading().
-      if (hero.results[0].id==="195"){
->>>>>>> d7dc42fcb80ee921a4825ddd8e1a3dd63f14e741
         //superman  
         return realSuperhero();
       } else if (hero.results[0].id==="69"){
