@@ -1,4 +1,3 @@
-Netlify Live Link--> 
 https://superhero-fight.netlify.app/
 
 Approach:
