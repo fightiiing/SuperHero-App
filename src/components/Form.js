@@ -5,8 +5,7 @@ import 'tippy.js/dist/tippy.css';
 export default function Form (props) {
   //State to hold the data of our form
   const [formData, setFormData] = useState({
-    searchterm: "",
-  });
+    searchterm: "",});
 
   //handleChange - updates formData when we type into form
   const handleChange = (event) => {
@@ -22,24 +21,21 @@ export default function Form (props) {
   };
 
   return (
-    <div className="inputDivContainer">
-      
+    <div className="inputDivContainer">  
         <form onSubmit={handleSubmit}>
-        <Tippy content="Type in a superhero name">
-        <input
-          id="input"
-          placeholder="SuperHero 1"
-          type="text"
-          name="searchterm"
-          onChange={handleChange}
-          value={formData.searchterm}
-          autoFocus
-        />   
-        </Tippy>
-        <input type="Submit" button id="submit"/>
-      </form>
-        
-      
+          <Tippy content="Type in a superhero name">
+            <input
+              id="input"
+              placeholder="SuperHero 1"
+              type="text"
+              name="searchterm"
+              onChange={handleChange}
+              value={formData.searchterm}
+              autoFocus
+            />   
+          </Tippy>
+          <input type="Submit" button id="submit"/>
+      </form>    
     </div>
   );
 };

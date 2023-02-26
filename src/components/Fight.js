@@ -18,7 +18,7 @@ export default function Fight({ hero, hero2 }) {
       };
 
      function handleClick() {
-          
+//create two fighter objects with their fighting stats, then calculate simple game criteria
         let fighter1 = {
             nameFunc() {
             if((hero.results[0].id==="195" && hero.results[1]) || (hero.results[0].id==="405" && hero.results[1])){
@@ -40,7 +40,7 @@ export default function Fight({ hero, hero2 }) {
                     setGameText((`${fighter1.name} attacks!`));
                     setDef2(defense2 -= fighter1.attack);
                     setGameText((`${fighter1.name} lands a good strike on ${otherFighter.name}!`));
-                 } else {
+                } else {
                     setGameText((`A swing and a miss by ${fighter1.name}!`));
                 }        
              }
@@ -82,38 +82,36 @@ export default function Fight({ hero, hero2 }) {
         setNameFighter2(fighter2.name=fighter2.nameFunc());
 
         while (defense1 > 0 && defense2 > 0) {
-                if (randomNum(0,100)>50){
-                    fighter1.attackFunc(fighter2);
-                } else {
-                    fighter2.attackFunc(fighter1);
-                }
-                if (defense2 <= 0 && defense1 > 0){
-                    setGameText((`${fighter1.name} wins the fight over ${fighter2.name}!`))
-                
+            if (randomNum(0,100)>50){
+                fighter1.attackFunc(fighter2);
+            } else {
+                fighter2.attackFunc(fighter1);
+            }
+            if (defense2 <= 0 && defense1 > 0){
+                setGameText((`${fighter1.name} wins the fight over ${fighter2.name}!`))
                     let response = prompt(`${fighter1.name} won! Play again?`, "yes")
-                 if(response==="yes"){
-                            setDef1(100);
-                            setDef2(100);
-                            break;
-                        } else{
-                            setDef1(100);
-                            setDef2(100);
-                            break;
-                        }
-                }; 
-                if (defense1 <= 0 && defense2 > 0){
-                    setGameText((`${fighter2.name} wins the fight over ${fighter1.name}!`))
-                    
-                    let response2 = prompt(`${fighter2.name} won! Play again?`, "yes")
+                if(response==="yes"){
+                    setDef1(100);
+                    setDef2(100);
+                    break;
+                } else{
+                    setDef1(100);
+                    setDef2(100);
+                    break;
+                }
+            }; 
+            if (defense1 <= 0 && defense2 > 0){
+                setGameText((`${fighter2.name} wins the fight over ${fighter1.name}!`))
+                   let response2 = prompt(`${fighter2.name} won! Play again?`, "yes")
                 if(response2==="yes"){
-                            setDef1(100);
-                            setDef2(100);
-                            break;
-                        } else{
-                            setDef1(100);
-                            setDef2(100);
-                            break;
-                        }
+                    setDef1(100);
+                    setDef2(100);
+                    break;
+                } else{
+                    setDef1(100);
+                    setDef2(100);
+                    break;
+                }
                 };
             //the bracket below closes the while loop   
             break;    
@@ -121,23 +119,22 @@ export default function Fight({ hero, hero2 }) {
         };
     
         return (
-          <div>
-            
+        <div>    
             <div className="health1">
                 {nameFighter1} Health {Math.ceil(defense1)}
-                </div>
-                <div className="health2">
+            </div>
+            <div className="health2">
                 {nameFighter2} Health {Math.ceil(defense2)}
-                </div>
+            </div>
             
-                <div className="fightDiv">    
-                <Tippy content="Keep pressing FIGHT until there's a winner!"><button onClick={handleClick} className="fightButton">
+            <div className="fightDiv">    
+            <Tippy content="Keep pressing FIGHT until there's a winner!">
+                <button onClick={handleClick} className="fightButton">
                     Fight!
                 </button>
-                </Tippy>
-                <span className="text">{gameText}</span>
-                    </div>
-                                 
-          </div>            
+            </Tippy>
+            <span className="text">{gameText}</span>
+            </div>                               
+        </div>            
         ); 
     };

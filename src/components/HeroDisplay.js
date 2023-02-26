@@ -32,7 +32,6 @@ const thing = () => {
   );  
 };
 
-
 //the standard data picked to display for returned superhero data
   const loaded = () => {
       return (

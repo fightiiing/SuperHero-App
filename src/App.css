@@ -279,84 +279,82 @@ img {
   font-weight:100;
   font-size: 15.5vw;
 }
-
 }
-
 
 @media only screen and (max-width: 768px) {
-  .App {
-    justify-content: center;
-    margin: auto;
-    grid-template-columns: .8fr;
-    grid-template-rows: .4fr .1fr .4fr .1fr .4fr .2fr;
-    grid-template-areas:
-      "header"
-      "form1"
-      "hero1"
-      "form2"
-      "hero2"
-      "footer";
-    }
+.App {
+  justify-content: center;
+  margin: auto;
+  grid-template-columns: .8fr;
+  grid-template-rows: .4fr .1fr .4fr .1fr .4fr .2fr;
+  grid-template-areas:
+    "header"
+    "form1"
+    "hero1"
+    "form2"
+    "hero2"
+    "footer";
+}
     
-  #headerText{
-    letter-spacing: 2px;
-    padding: 10px;
-  }
-  
-.health1, .health2 {
-    padding: 10px;
-    text-align: center;
+#headerText{
+  letter-spacing: 2px;
+  padding: 10px;
 }
   
-  .form1, .form2 {
-    flex-direction: column;
-  }
-
-  #input {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    box-shadow: 3px 3px 3px #ffffff;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-  .randomButton {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-  #submit {
-    display: inline-block;
-    border: 1px solid black;
-    margin: 0;
-    text-decoration: none;
-    background: #1f5768ff;
-    color: #ffffff;
-    line-height: 1;
-    border: solid black 3px;
-    box-shadow: 3px 3px 3px #ffffff;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-weight:100;
-  }
+.health1, .health2 {
+  padding: 10px;
+  text-align: center;
+}
   
-  .divider {
-    display:none;
-  }
+.form1, .form2 {
+  flex-direction: column;
+}
 
-  .hero1, .hero2 {
-    padding: 5px;
-  }
+#input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  box-shadow: 3px 3px 3px #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 
-  img {
+.randomButton {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#submit {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 0;
+  text-decoration: none;
+  background: #1f5768ff;
+  color: #ffffff;
+  line-height: 1;
+  border: solid black 3px;
+  box-shadow: 3px 3px 3px #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-weight:100;
+}
+  
+.divider {
+  display:none;
+}
+
+.hero1, .hero2 {
+  padding: 5px;
+}
+
+img {
   width: 100%;
-  }
+}
 
-  .App > div {  
+.App > div {  
   background-position: center;
   background-position-x: 25%;
-  }
+}
 }
