@@ -9,14 +9,13 @@
 } 
 
 body {
-  height: 100vh;
   width: auto;
   background-color: var(--base-color);
 }
 
 .App {
-  margin-left: auto;
-  margin-right: auto;
+  height: 100vh;
+  margin: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .25fr .1fr 1fr .25fr;
@@ -140,16 +139,20 @@ body {
   letter-spacing: 9px;
 }
 
+.heroStats {
+  white-space: nowrap;
+}
+
 .hero2 {
   grid-area: hero2;
 }
 
 .hero1 h1, .hero2 h1{
-background-image: linear-gradient(0deg, rgb(255, 18, 18) 30%,rgb(255, 215, 38));
-background-size: 100%;
-background-clip: text;
--webkit-text-fill-color: transparent;
--webkit-text-stroke: 1px black;
+  background-image: linear-gradient(0deg, rgb(255, 18, 18) 30%,rgb(255, 215, 38));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px black;
 }
 
 .divider {
@@ -300,7 +303,11 @@ img {
   letter-spacing: 2px;
   padding: 10px;
 }
-  
+
+.heroStats {
+  white-space: normal;
+}
+
 .health1, .health2 {
   padding: 10px;
   text-align: center;
@@ -354,7 +361,8 @@ img {
 }
 
 .App > div {  
-  background-position: center;
+  background-position: center; 
   background-position-x: 25%;
 }
+
 }
