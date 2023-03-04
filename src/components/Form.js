@@ -17,7 +17,17 @@ export default function Form (props) {
     //prevent page from refreshing on form submission
     event.preventDefault();
     //pass the search term to herosearch prop, which is apps getHero function
+    if(formData.searchterm==="superman"){
+      props.herosearch(644)
+    } else if (formData.searchterm==="thor"){
+      props.herosearch(659);
+    } else if (formData.searchterm==="batman"){
+      props.herosearch(70);
+    } else if (formData.searchterm==="thing"){
+      props.herosearch(658);
+    } else{
     props.herosearch(formData.searchterm);
+    }
   };
 
   return (

@@ -16,7 +16,17 @@ export default function Form2 (props) {
   const handleSubmit = (event) => {
     //prevent page from refreshing on form submission
     event.preventDefault();
+    if(formData2.searchterm2==="superman"){
+      props.herosearch(644)
+    } else if (formData2.searchterm2==="thor"){
+      props.herosearch(659);
+    } else if (formData2.searchterm2==="batman"){
+      props.herosearch(70);
+    } else if (formData2.searchterm2==="thing"){
+      props.herosearch(658);
+    } else{
     props.herosearch(formData2.searchterm2);
+    }
   };
 
   return (

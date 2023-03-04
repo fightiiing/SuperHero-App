@@ -30,6 +30,21 @@ const thing = () => {
   );  
 };
 
+const random = () => {
+  return (
+    <div className="heroContainer">
+     <div className="heroStats">
+      <h1>{hero2.name}</h1>
+      <h3>Combat = {hero2.powerstats.combat}</h3>
+      <h3>IQ = {hero2.powerstats.intelligence} <span className="divider">|</span> Strength = {hero2.powerstats.strength} </h3>
+      <h3>Speed = {hero2.powerstats.speed} <span className="divider">|</span> Durability = {hero2.powerstats.durability}</h3>
+      <h3>Height = {hero2.appearance.height[0]} <span className="divider">|</span> Weight = {hero2.appearance.weight[0]}</h3>
+      </div>     
+      <img src={hero2.image.url} alt={hero2.name} />       
+  </div>
+  );  
+};
+
     const loaded = () => {
       return (
         <div className="heroContainer">
@@ -50,8 +65,11 @@ const thing = () => {
     };
   
   if (hero2){
-    if (hero2.results[0].id==="195" && hero2.results[1]){
-      //superman  
+    if (hero2.id){
+        //random superhero searched by character id, which returns differently formatted JSON data than a string search
+        return random();      
+    } else if (hero2.results[0].id==="195" && hero2.results[1]){
+        //superman  
       return realSuperhero();
     } else if (hero2.results[0].id==="69"){
       //batman

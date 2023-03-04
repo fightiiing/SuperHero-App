@@ -32,6 +32,21 @@ const thing = () => {
   );  
 };
 
+const random = () => {
+  return (
+    <div className="heroContainer">
+     <div className="heroStats">
+      <h1>{hero.name}</h1>
+      <h3>Combat = {hero.powerstats.combat}</h3>
+      <h3>IQ = {hero.powerstats.intelligence} <span className="divider">|</span> Strength = {hero.powerstats.strength} </h3>
+      <h3>Speed = {hero.powerstats.speed} <span className="divider">|</span> Durability = {hero.powerstats.durability}</h3>
+      <h3>Height = {hero.appearance.height[0]} <span className="divider">|</span> Weight = {hero.appearance.weight[0]}</h3>
+      </div>     
+      <img src={hero.image.url} alt={hero.name} />       
+  </div>
+  );  
+};
+
 //the standard data picked to display for returned superhero data
   const loaded = () => {
       return (
@@ -55,7 +70,10 @@ const thing = () => {
 
 //conditional which chooses which function to run, which determines where the data is to be pulled from, depending on the superhero data. 'hero' is the json data passed in.   
   if (hero){
-      if (hero.results[0].id==="195" && hero.results[1]){
+      if (hero.id){
+        //random superhero searched by character id, which returns differently formatted JSON data than a string search
+        return random();      
+      } else if (hero.results[0].id==="195" && hero.results[1]){
         //superman  
         return realSuperhero();
       } else if (hero.results[0].id==="69"){
