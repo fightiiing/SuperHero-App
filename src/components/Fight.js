@@ -40,7 +40,7 @@ function handleClick() {
                     }        
                 }
             }
-        
+
         fighter2 = { 
             name: hero2.name ? hero2.name : hero2.results[0].name,
             durability: hero2.powerstats ? Number(hero2.powerstats.durability) : Number(hero2.results[0].powerstats.durability),
@@ -58,16 +58,33 @@ function handleClick() {
                     setGameText((`${otherFighter.name} dodged the attack!`));
                 }        
                 }
+        }      
+
+        if (isNaN(fighter1.combat)){
+            fighter1.durability=10;
+            fighter1.combat=10;
+            fighter1.intelligence=10;
+            fighter1.strength=10;
+            fighter1.speed=10;
+            fighter1.power=10;
         }
-    
-        fighter1.attack = ((fighter1.strength + fighter1.speed + fighter1.power) /(4+(fighter2.durability+fighter2.intelligence)/100));
-        fighter1.accuracy = ((fighter1.combat + fighter1.intelligence) / 2);
-      
-        fighter2.attack = ((fighter2.strength + fighter2.speed + fighter2.power) /(4+(fighter1.durability+fighter1.intelligence)/100));            
-        fighter2.accuracy = ((fighter2.combat + fighter2.intelligence) / 2);
-    
-        setNameFighter1(fighter1.name);
-        setNameFighter2(fighter2.name);
+           
+        if (isNaN(fighter2.combat)){
+            fighter2.durability=10;
+            fighter2.combat=10;
+            fighter2.intelligence=10;
+            fighter2.strength=10;
+            fighter2.speed=10;
+            fighter2.power=10;
+        }  
+            fighter1.attack = ((fighter1.strength + fighter1.speed + fighter1.power) /(4+(fighter2.durability+fighter2.intelligence)/100));
+            fighter1.accuracy = ((fighter1.combat + fighter1.intelligence) / 2);
+        
+            fighter2.attack = ((fighter2.strength + fighter2.speed + fighter2.power) /(4+(fighter1.durability+fighter1.intelligence)/100));            
+            fighter2.accuracy = ((fighter2.combat + fighter2.intelligence) / 2);
+            
+            setNameFighter1(fighter1.name);
+            setNameFighter2(fighter2.name);
         
         while (defense1 > 0 && defense2 > 0) {
             if (randomNum(0,100)>50){
@@ -115,11 +132,13 @@ function handleClick() {
                 {nameFighter2} Health {Math.ceil(defense2)}
             </div>
             
-            <div className="fightDiv">    
-            <Tippy content="Keep pressing FIGHT until there's a winner!">
+            <div className="fightDiv"> 
+            <Tippy content="Keep pressing FIGHT until there's a winner!" >
+                <Tippy content="Null Superhero stats default to 10" placement="bottom">
                 <button onClick={handleClick} className="fightButton">
                     Fight!
                 </button>
+                </Tippy>
             </Tippy>
             <span className="text">{gameText}</span>
             </div>                               

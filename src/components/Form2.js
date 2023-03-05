@@ -32,10 +32,10 @@ export default function Form2 (props) {
   return (
     <div className="inputDivContainer2">
       <form onSubmit={handleSubmit}>
-        <Tippy content="Type in a superhero name">
+        <Tippy content="Type in a Superhero name">
           <input
             id="input"
-            placeholder="SuperHero 2"
+            placeholder="Superhero 2"
             type="text"
             name="searchterm2"
             onChange={handleChange}

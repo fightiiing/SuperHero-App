@@ -33,10 +33,10 @@ export default function Form (props) {
   return (
     <div className="inputDivContainer">  
         <form onSubmit={handleSubmit}>
-          <Tippy content="Type in a superhero name">
+          <Tippy content="Type in a Superhero name">
             <input
               id="input"
-              placeholder="SuperHero 1"
+              placeholder="Superhero 1"
               type="text"
               name="searchterm"
               onChange={handleChange}

@@ -14,19 +14,20 @@ import 'tippy.js/dist/tippy.css';
 export default function App() {
   //Hero card 1   
   const [hero, setHero] = useState(null);
+
   const getHero = async (searchOne) => {
       // make fetch request and store response
-      try{
-        const response = isNaN(searchOne) ? await fetch( `https://superheroapi.com/api.php/106094302402171/search/${searchOne}` ) : await fetch( `https://superheroapi.com/api.php/106094302402171/${searchOne}` );
+      try{  
+      const response = isNaN(searchOne) ? await fetch( `https://superheroapi.com/api.php/106094302402171/search/${searchOne}` ) : await fetch( `https://superheroapi.com/api.php/106094302402171/${searchOne}` );
         const data = await response.json();
+        
          if (data.response==="error") {
-         throw Error();
-        }
-    //set the Hero data stats
+         throw Error()
+        } 
         setHero(data);
       } catch(e) {
       alert("Superhero not in database or name misspelled");
-    }
+    } 
   };
 
   const randomNum = (min, max) => {
@@ -70,7 +71,9 @@ export default function App() {
             
           <div className='form1'>
             <Form herosearch={getHero} />  
-            <button className='randomButton' onClick={() =>{getHero(randomNum(1,731))}}>Random</button>  
+            <Tippy content="Selects a random Superhero" >
+            <button className='randomButton' onClick={() =>getHero(randomNum(1,731))}>Random</button>  
+            </Tippy>
           </div>
 
           <div className='hero1'>
@@ -79,7 +82,9 @@ export default function App() {
              
           <div className='form2'>
             <Form2 herosearch={getHero2} />
-            <button className='randomButton' onClick={() =>{getHero2(randomNum(1,731))}}>Random</button>
+            <Tippy content="Selects a random Superhero" >
+            <button className='randomButton' onClick={() =>getHero2(randomNum(1,731))}>Random</button>
+            </Tippy>
           </div>
           
           <div className='hero2'>
@@ -87,7 +92,7 @@ export default function App() {
           </div>
             
           <div className='footer'>
-            <Fight hero={hero} hero2={hero2} />
+            <Fight hero={hero} hero2={hero2}/>
               <Tippy content="Press play for stage music!">
                 <div className="audioPlayer">
                 <AudioPlayer
