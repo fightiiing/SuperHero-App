@@ -3,7 +3,7 @@ import { useState } from "react";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
-export default function Fight({ hero, hero2 }) {
+export default function Fight({ hero, hero2, setProgressBar, setProgressBar2 }) {
     
 let [gameText, setGameText] = useState("");
 let [defense1, setDef1] = useState(100);
@@ -19,6 +19,8 @@ const randomNum = (min, max) => {
 //create two fighter objects with their fighting stats, then calculate simple game criteria
 let fighter1 = {};
 let fighter2 = {};
+setProgressBar(defense1)
+setProgressBar2(defense2)
 
 function handleClick() {
 
@@ -93,16 +95,14 @@ function handleClick() {
                 fighter2.attackFunc(fighter1);
             }
             if (defense2 <= 0 && defense1 > 0){
-                setGameText((`${fighter1.name} wins the fight over ${fighter2.name}!`))
+                    setGameText((`${fighter1.name} wins the fight over ${fighter2.name}!`))
                     let response = prompt(`${fighter1.name} won! Play again?`, "yes")
                 if(response==="yes"){
                     setDef1(100);
                     setDef2(100);
-                    break;
                 } else{
                     setDef1(100);
                     setDef2(100);
-                    break;
                 }
             }; 
             if (defense1 <= 0 && defense2 > 0){
@@ -111,11 +111,9 @@ function handleClick() {
                 if(response2==="yes"){
                     setDef1(100);
                     setDef2(100);
-                    break;
                 } else{
                     setDef1(100);
                     setDef2(100);
-                    break;
                 }
                 };
             //the bracket below closes the while loop   

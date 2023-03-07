@@ -1,4 +1,8 @@
-export default function  HeroDisplay2 ({ hero2 }){
+export default function  HeroDisplay2 ({ hero2, progressBar2 }){
+
+  let progressStyle = {
+     filter: `grayscale(${100-progressBar2}%)`,
+  };
 
 const numeric = () => {
   return (
@@ -10,7 +14,9 @@ const numeric = () => {
       <h3>Speed = {hero2.powerstats.speed} <span className="divider">|</span> Durability = {hero2.powerstats.durability}</h3>
       <h3>Height = {hero2.appearance.height[0]} <span className="divider">|</span> Weight = {hero2.appearance.weight[0]}</h3>
       </div>     
-      <img src={hero2.image.url} alt={hero2.name} />       
+      <div className="celebrate">
+        <img style={progressStyle} src={hero2.image.url} alt={hero2.name} />    
+        </div>
   </div>
   );  
 };
@@ -25,7 +31,7 @@ const numeric = () => {
             <h3>Speed = {hero2.results[0].powerstats.speed} <span className="divider">|</span> Durability = {hero2.results[0].powerstats.durability}</h3>
             <h3>Height = {hero2.results[0].appearance.height[0]} <span className="divider">|</span> Weight = {hero2.results[0].appearance.weight[0]}</h3>
             </div>     
-            <img src={hero2.results[0].image.url} alt={hero2.results[0].name} />      
+            <img style={progressStyle} src={hero2.results[0].image.url} alt={hero2.results[0].name} />      
         </div>
       );  
 };

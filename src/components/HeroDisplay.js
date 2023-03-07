@@ -1,4 +1,8 @@
-export default function  HeroDisplay ({ hero }){
+export default function  HeroDisplay ({ hero, progressBar }){
+
+  let progressStyle = {
+    filter: `grayscale(${100-progressBar}%)`,
+  };
 
 //how data searched via character id is displayed 
 const numeric = () => {
@@ -11,7 +15,7 @@ const numeric = () => {
       <h3>Speed = {hero.powerstats.speed} <span className="divider">|</span> Durability = {hero.powerstats.durability}</h3>
       <h3>Height = {hero.appearance.height[0]} <span className="divider">|</span> Weight = {hero.appearance.weight[0]}</h3>
       </div>     
-      <img src={hero.image.url} alt={hero.name} />       
+      <img style={progressStyle} src={hero.image.url} alt={hero.name} />       
   </div>
   );  
 };
@@ -27,7 +31,7 @@ const numeric = () => {
             <h3>Speed = {hero.results[0].powerstats.speed} <span className="divider">|</span> Durability = {hero.results[0].powerstats.durability}</h3>
             <h3>Height = {hero.results[0].appearance.height[0]} <span className="divider">|</span> Weight = {hero.results[0].appearance.weight[0]}</h3>
             </div> 
-            <img src={hero.results[0].image.url} alt={hero.results[0].name} />   
+            <img style={progressStyle} src={hero.results[0].image.url} alt={hero.results[0].name} />   
         </div>            
       );
     };

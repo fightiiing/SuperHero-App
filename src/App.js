@@ -12,6 +12,10 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 export default function App() {
+//Passing state for character health from Fight component to Display component
+const [progressBar, setProgressBar] = useState(100)
+const [progressBar2, setProgressBar2] = useState(100)
+
   //Hero card 1   
   const [hero, setHero] = useState(null);
 
@@ -77,7 +81,7 @@ export default function App() {
           </div>
 
           <div className='hero1'>
-            <HeroDisplay hero={hero} />
+            <HeroDisplay hero={hero} progressBar={progressBar}/>
           </div>    
              
           <div className='form2'>
@@ -88,11 +92,11 @@ export default function App() {
           </div>
           
           <div className='hero2'>
-            <HeroDisplay2 hero2={hero2} />
+            <HeroDisplay2 hero2={hero2} progressBar2={progressBar2}/>
           </div>
             
           <div className='footer'>
-            <Fight hero={hero} hero2={hero2}/>
+            <Fight hero={hero} hero2={hero2} setProgressBar={setProgressBar} setProgressBar2={setProgressBar2}/>
               <Tippy content="Press play for stage music!">
                 <div className="audioPlayer">
                 <AudioPlayer
