@@ -1,7 +1,7 @@
 export default function  HeroDisplay2 ({ hero2, progressBar2 }){
 
   let progressStyle = {
-     filter: `grayscale(${100-progressBar2}%)`,
+     filter: `grayscale(${100-progressBar2}%)`
   };
 
 const numeric = () => {

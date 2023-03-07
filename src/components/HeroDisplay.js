@@ -1,7 +1,7 @@
 export default function  HeroDisplay ({ hero, progressBar }){
 
   let progressStyle = {
-    filter: `grayscale(${100-progressBar}%)`,
+    filter: `grayscale(${100-progressBar}%)`
   };
 
 //how data searched via character id is displayed 
