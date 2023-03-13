@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -19,8 +19,13 @@ const randomNum = (min, max) => {
 //create two fighter objects with their fighting stats, then calculate simple game criteria
 let fighter1 = {};
 let fighter2 = {};
-setProgressBar(defense1)
-setProgressBar2(defense2)
+useEffect(() => {
+    setProgressBar(defense1)
+}, [defense1])
+
+useEffect(()=> {
+    setProgressBar2(defense2)    
+},[defense2])
 
 function handleClick() {
 
@@ -63,21 +68,21 @@ function handleClick() {
         }      
 
         if (isNaN(fighter1.combat)){
-            fighter1.durability=10;
-            fighter1.combat=10;
-            fighter1.intelligence=10;
-            fighter1.strength=10;
-            fighter1.speed=10;
-            fighter1.power=10;
+            fighter1.durability=20;
+            fighter1.combat=20;
+            fighter1.intelligence=20;
+            fighter1.strength=20;
+            fighter1.speed=20;
+            fighter1.power=20;
         }
            
         if (isNaN(fighter2.combat)){
-            fighter2.durability=10;
-            fighter2.combat=10;
-            fighter2.intelligence=10;
-            fighter2.strength=10;
-            fighter2.speed=10;
-            fighter2.power=10;
+            fighter2.durability=20;
+            fighter2.combat=20;
+            fighter2.intelligence=20;
+            fighter2.strength=20;
+            fighter2.speed=20;
+            fighter2.power=20;
         }  
             fighter1.attack = ((fighter1.strength + fighter1.speed + fighter1.power) /(4+(fighter2.durability+fighter2.intelligence)/100));
             fighter1.accuracy = ((fighter1.combat + fighter1.intelligence) / 2);
@@ -123,6 +128,7 @@ function handleClick() {
     
         return (
         <div>    
+            
             <div className="health1">
                 {nameFighter1} Health {Math.ceil(defense1)}
             </div>
@@ -131,15 +137,12 @@ function handleClick() {
             </div>
             
             <div className="fightDiv"> 
-            <Tippy content="Keep pressing FIGHT until there's a winner!" >
-                <Tippy content="Null Superhero stats default to 10" placement="bottom">
                 <button onClick={handleClick} className="fightButton">
                     Fight!
                 </button>
-                </Tippy>
-            </Tippy>
             <span className="text">{gameText}</span>
-            </div>                               
+            </div>   
+                          
         </div>            
         ); 
     };

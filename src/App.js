@@ -10,6 +10,7 @@ import song from "./audio/streetFighter2Theme.mp3";
 import Fight from './components/Fight';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import Modal from "./components/Modal";
 
 export default function App() {
 //Passing state for character health from Fight component to Display component
@@ -96,7 +97,8 @@ const [progressBar2, setProgressBar2] = useState(100)
           </div>
             
           <div className='footer'>
-            <Fight hero={hero} hero2={hero2} setProgressBar={setProgressBar} setProgressBar2={setProgressBar2}/>
+            <Fight hero={hero} hero2={hero2} setProgressBar={setProgressBar} setProgressBar2={setProgressBar2}/> 
+            <Modal />
               <Tippy content="Press play for stage music!">
                 <div className="audioPlayer">
                 <AudioPlayer

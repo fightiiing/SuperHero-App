@@ -1,9 +1,9 @@
 export default function  HeroDisplay ({ hero, progressBar }){
-
+  //Image of the character gradually loses color as a percentage based on their health status
   let progressStyle = {
     filter: `grayscale(${100-progressBar}%)`
   };
-
+   
 //how data searched via character id is displayed 
 const numeric = () => {
   return (
@@ -50,4 +50,4 @@ const numeric = () => {
   } else { 
         return loading();
       }
-  };
+};
