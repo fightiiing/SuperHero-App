@@ -3,20 +3,18 @@ body.active-modal {
   }
   
   .btn-modal {
-    padding: 5px 15px;
+    padding: 5px 5px;
     display: block;
     margin: 0 auto 10px;
-    font-size: 18px;
     background-color: #1f5768ff;
-    color: white;
-    font-size: 50px;
-    border-radius: 20px;
+    color: none;
+    font-size: 30px;
+    border-radius: 50px;
     cursor: pointer;
-    box-shadow: 2px 2px 2px #ffffff;
   }
   
   .btn-modal:hover {
-  color: black;
+background-color: black;
   }
 
   .modal, .overlay {
@@ -35,12 +33,10 @@ body.active-modal {
 
   .modal-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
-    padding: 14px 28px;
     border-radius: 3px;
     max-width: 600px;
     min-width: 300px;
@@ -48,8 +44,15 @@ body.active-modal {
     font-size: x-large;
     letter-spacing: 4px;
     background-color: #a7a4e0;
+   }
+
+  .modal-header {
+   font-size: 4.5rem; 
+   letter-spacing: 15px;
+   text-align: center;
+   font-weight:100;
   }
-  
+
   .close-modal {
     position: absolute;
     top: 10px;

@@ -18,14 +18,14 @@ export default function Modal() {
   return (
     <>
       <button onClick={toggleModal} className="btn-modal">
-      ℹ️
+      ❔
       </button>
 
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
-            <h2>How to Play</h2>
+            <h2 className="modal-header">How to Play</h2>
             <ul>
               <li>Select two characters to Fight</li>
               <li>A character can be searched for or randomly picked</li>

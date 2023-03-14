@@ -1,7 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 
 export default function Fight({ hero, hero2, setProgressBar, setProgressBar2 }) {
     
@@ -128,7 +126,6 @@ function handleClick() {
     
         return (
         <div>    
-            
             <div className="health1">
                 {nameFighter1} Health {Math.ceil(defense1)}
             </div>
